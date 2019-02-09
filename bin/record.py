@@ -15,7 +15,7 @@ since full object is available already as attachment)
 
 import argparse
 import couchdb
-import dicom
+import pydicom
 import json
 import os
 import sys
@@ -210,7 +210,7 @@ class ChronicleRecord():
 
         # create dataset, skip non-dicom
         try:
-            dataset = dicom.read_file(fileNamePath)
+            dataset = pydicom.read_file(fileNamePath)
         except:
             print("...apparently not dicom")
             return
