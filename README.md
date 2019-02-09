@@ -21,15 +21,15 @@ Repository Contents
 Prerequisites
 =============
 
-* For the python scripts
- * pydicom
- * couchdb
- * pillow
- * numpy
-* For the server
- * Apache CouchDB
-* For the browser
- * HTML5 compliant browser (Chrome, Desktop Safari, Firefox, IE should all work with the WebGL rendering)
+For the python scripts:
+* pydicom
+* couchdb
+* pillow
+* numpy
+Server:
+* Apache CouchDB
+Browser:
+* HTML5 compliant browser (Chrome, Desktop Safari, Firefox, IE should all work with the WebGL rendering)
 
 Use https://github.com/pieper/couchSite to upload design documents and site (html/css/javascript)
 
