@@ -16,14 +16,11 @@ since full object is available already as attachment)
 import argparse
 import couchdb
 import pydicom
-import json
 import os
-import sys
 import tempfile
 import traceback
 
 try:
-    import PIL
     import PIL.Image as Image
 except ImportError:
     # for some reason easy_install doesn't generate a PIL layer on mac
