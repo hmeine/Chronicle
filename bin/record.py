@@ -86,7 +86,7 @@ class ChronicleRecord():
                 "Value" : value
             }
         except UnboundLocalError:
-            print ("UnboundLocalError: ", dataElement)
+            print("UnboundLocalError: ", dataElement)
         return json
 
     def datasetToJSON(self,dataset):
@@ -272,7 +272,7 @@ class ChronicleRecord():
           self.db.put_attachment(doc, fp, "object.dcm")
           fp.close()
 
-        print ("...recorded %s" % dataset.SOPInstanceUID)
+        print("...recorded %s" % dataset.SOPInstanceUID)
 
 # }}}
 
@@ -305,7 +305,7 @@ if __name__ == '__main__':
     try:
         main()
     except Exception as e:
-        print ('ERROR, UNEXPECTED EXCEPTION')
+        print('ERROR, UNEXPECTED EXCEPTION')
         print(str(e))
         traceback.print_exc()
 
