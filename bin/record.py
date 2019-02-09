@@ -279,7 +279,7 @@ class ChronicleRecord():
 def main ():
 
     parser = argparse.ArgumentParser(description="Record DICOM documents into Chronicle of CouchDB")
-    parser.add_argument("inputDirectory",help="Input path to search for files to record")
+    parser.add_argument("inputPath",help="Input path to search for files to record", nargs = '+')
     parser.add_argument("--url",dest="couchDB_URL",type=str,default="http://localhost:5984",help="CouchDB instance URL (default http://localhost:5984)")
     parser.add_argument("--dbName",dest="databaseName",type=str,default="chronicle",help="Name of the database (default chronicle)")
     parser.add_argument("--dontAttachImages",dest="dontAttachImages",action="store_true",default=False,help="Flag to generate and attach image thumbnails (default false)")
@@ -293,11 +293,11 @@ def main ():
     recorder.attachOriginals = not ns.dontAttachOriginals
     recorder.forceUpload = ns.forceUpload
 
-    path = ns.inputDirectory
-    if os.path.isdir(path):
-      recorder.recordDirectory(path)
-    elif os.path.isfile(path):
-      recorder.recordFile(path)
+    for path in ns.inputPath:
+        if os.path.isdir(path):
+            recorder.recordDirectory(path)
+        elif os.path.isfile(path):
+            recorder.recordFile(path)
 
 if __name__ == '__main__':
     try:
