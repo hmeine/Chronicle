@@ -71,8 +71,6 @@ class ChronicleRecord():
             value = "%s" % dataElement.value
         else:
             value = dataElement.value
-            if isinstance(value, unicode):
-                value = value.encode('utf=8')
         try:
             try:
                 couchdb.json.encode(value).encode('utf-8')
