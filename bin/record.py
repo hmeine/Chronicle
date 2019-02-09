@@ -17,6 +17,7 @@ import argparse
 import couchdb
 import pydicom
 import os
+import sys
 import tempfile
 import traceback
 
@@ -302,8 +303,7 @@ if __name__ == '__main__':
     try:
         main()
     except Exception as e:
-        print('ERROR, UNEXPECTED EXCEPTION')
-        print(str(e))
+        sys.stderr.write('ERROR, UNEXPECTED EXCEPTION: %s\n' % e)
         traceback.print_exc()
 
 # }}}
