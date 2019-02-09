@@ -150,7 +150,7 @@ class ChronicleRecord():
             elif bits == 1 and samples == 1:
                 mode = "1"
             else:
-                raise TypeError, "Don't know PIL mode for %d BitsAllocated and %d SamplesPerPixel" % (bits, samples)
+                raise TypeError("Don't know PIL mode for %d BitsAllocated and %d SamplesPerPixel" % (bits, samples))
             # PIL size = (width, height)
             size = (dataset.Columns, dataset.Rows)
             # Recommended to specify all details by
